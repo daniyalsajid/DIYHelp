@@ -1,6 +1,6 @@
-@extends('layouts.app')
-
+@extends('theme.default')
 @section('content')
+<<<<<<< Updated upstream
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -67,6 +67,75 @@
                                                     </div>
                                                 </div>
                                             </div>
+=======
+
+<section class="sign_in">
+    <div class="container">
+        <div class="sign_in_box_main">
+            <div class="sign_in_box_main_inner">
+                <div class="sign_in_heading">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                            <form method="POST" action="{{ route('login') }}">
+                                @csrf
+                                <h2>{{ __('Login') }}</h2>
+                                <p>Already have an account? Logouytsss Up</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sign_in_boxes">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 border_left">
+                            <div class="sign_in_form">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                            @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+                                            <button type="submit" class="btn btn-primary">
+                                                {{ __('Login') }}
+                                            </button>
+                                            @if (Route::has('password.request'))
+                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                {{ __('Forgot Your Password?') }}
+                                            </a>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                            <div class="sign_in_form_button">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col xs-12">
+                                        <div class="sign_in_form_button_facebook">
+                                            <a href="confirmation_msg.html" class="btn btn-primary"><span>Continue with Facebook</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col xs-12">
+                                        <div class="sign_in_form_button_google">
+                                            <a href="cconfirmation_msg.html" class="btn btn-primary"><span>Continue with Google</span></a>
+>>>>>>> Stashed changes
                                         </div>
                                     </div>
                                 </div>
@@ -77,5 +146,10 @@
             </section>
         </div>
     </div>
+<<<<<<< Updated upstream
 </div>
+=======
+</section>
+
+>>>>>>> Stashed changes
 @endsection

@@ -23,6 +23,34 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('myhome');
+    }
+
+    public function myHome()
+
+    {
+
+        return view('myHome');
+
+    }
+
+
+
+    /**
+
+     * Show the my users page.
+
+     *
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function myUsers()
+
+    {
+
+        return view('myUsers');
+
     }
 }

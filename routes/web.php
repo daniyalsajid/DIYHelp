@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('myhome');
 });
 
 Auth::routes();
@@ -50,3 +50,7 @@ Route::post('/o', 'OfferServiceController@store');
 
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+
+//Route::get('my-users', 'HomeController@myUsers');
+
