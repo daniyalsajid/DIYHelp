@@ -57,7 +57,36 @@
                                     <i class="fa fa-envelope"></i><span>Email:contact@diy-help.com</span>
                                 </a>
                             </li>
-                        </ul>
+                            <ul class="navbar-nav ml-auto">
+                                            <!-- Authentication Links -->
+                                            @guest
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                            </li>
+                                            @if (Route::has('register'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                            </li>
+                                            @endif
+                                            @else
+                                            <li class="nav-item dropdown">
+                                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                        {{ __('Logout') }}
+                                                    </a>
+
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                        @csrf
+                                                    </form>
+                                                </div>
+                                            </li>
+                                            @endguest
+                                        </ul>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">
@@ -137,47 +166,6 @@
                             <h3>We connect house holds with professionals</h3>
                             <p>DIY Help provides platform to domestic households with professionals. </p>
                         </div>
-                        <div id="app">
-                            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-                                <div class="container">
-
-                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                                        <!-- Right Side Of Navbar -->
-                                        <ul class="navbar-nav ml-auto">
-                                            <!-- Authentication Links -->
-                                            @guest
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                            </li>
-                                            @if (Route::has('register'))
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                            </li>
-                                            @endif
-                                            @else
-                                            <li class="nav-item dropdown">
-                                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                                </a>
-
-                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                                        {{ __('Logout') }}
-                                                    </a>
-
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                        @csrf
-                                                    </form>
-                                                </div>
-                                            </li>
-                                            @endguest
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -190,3 +178,41 @@
 </body>
 
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Demo Services</title>
+	<link rel="stylesheet" href="{!! asset('css/bootstrap.css') !!}">
+	<link rel="stylesheet" href="{!! asset('css/slick.css') !!}">
+	<link rel="stylesheet" href="{!! asset('css/slick-theme.css') !!}">
+	<link rel="stylesheet" href="{!! asset('css/lightgallery.css') !!}">
+	<link rel="stylesheet" href="{!! asset('css/font-awesome.css') !!}">
+	<link rel="stylesheet" href="{!! asset('css/style.css') !!}">
+	<link rel="stylesheet" href="{!! asset('css/responsive.css') !!}">
+</head>
+<body>
+    <nav class="sub-header" role="navigation" style="margin-bottom: 0">
+
+        @include('theme.header')
+
+       
+
+        <div id="page-wrapper">
+
+            @yield('content')
+
+        </div>
+
+        <!-- /#page-wrapper -->
+
+
+        @include('theme.homefooter')
+
+    </nav>
+
+	
+</body>
+</html>
+

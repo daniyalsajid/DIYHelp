@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('theme.default')
 
 @section('content')
 <div class="card-body">
@@ -9,12 +9,14 @@
     @endif
 </div>
 
+
+
 <section class="site-forms blue">
-    <div class="container">
+<div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <div class="form-heading">
-                    <span>Offer services</span>
+                    <span>Offer services<</span>
                     <h2>I want to offer my services as</h2>
                 </div>
             </div>
@@ -37,7 +39,8 @@
                                 </div>
                             </div>
                             <div class="siteform">
-                                <form action="/o" method="post">
+                                <!-- /////////////////////////////////////////////////////////////////////////// -->
+                                <form action="/p" method="post">
                                     @csrf
                                     <div class="form-row">
                                         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
@@ -60,7 +63,7 @@
                                             <strong>{{ $errors->first('telephone') }}</strong>
                                             @endif
                                         </div>
-                                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                                         <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
                                             <input name="profession" type="text" class="form-control" placeholder="Profession">
                                             @if ($errors->has('profession'))
                                             <strong>{{ $errors->first('profession') }}</strong>
@@ -77,8 +80,8 @@
                                     </div>
 
                             </div>
+                        
 
-                        </div>
                         <div class="siteform">
                             <form>
                                 <div class="form-row">
@@ -156,19 +159,4 @@
     </div>
 </section>
 
-<footer class="footer-global">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
-                <div class="copy-right">
-                    <p>Copyright © 2019 DIY-Help. All Rights Reserved.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
-                <div class="develop">
-                    <p><span>Small Masters Project.</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+@endsection

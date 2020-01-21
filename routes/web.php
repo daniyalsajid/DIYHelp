@@ -34,6 +34,7 @@ Route::get('/p/create-service', 'GetServiceController@create');
 Route::post('/p', 'GetServiceController@store');
 
 Route::get('/offers', 'OffersController@index');
+Route::get('/offers/{sub_categories}', 'OffersController@offerServices')->name('services');
 Route::get('/offerdetails/{details}', 'OffersController@offerDetails')->name('services');
 
 // Route::get('/offers', 'OffersController@index');

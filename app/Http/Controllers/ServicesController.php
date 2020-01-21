@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\GetService;
+use App\OfferService;
 
 class ServicesController extends Controller
 {
@@ -24,8 +25,8 @@ class ServicesController extends Controller
     public function specificServices($specific)
     {
 
-        $services = GetService::latest()->where('sub_categories_id', '=', $specific)->get();
-        return view('/services', ['services' => $services]);
+        $services = OfferService::latest()->where('sub_categories_id', '=', $specific)->get();
+        return view('/offers', ['services' => $services]);
     }
 
     public function serviceDetails($selectedService)

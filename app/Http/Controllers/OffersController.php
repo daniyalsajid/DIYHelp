@@ -24,8 +24,8 @@ class OffersController extends Controller
     public function offerServices($specific)
     {
 
-        $offers = OfferService::latest()->where('sub_categories_id', '=', $specific)->get();
-        return view('/details', ['offers' => $offers]);
+        $services = OfferService::latest()->where('sub_categories_id', '=', $specific)->get();
+        return view('/offers', ['offers' => $services]);
     }
 
     public function offerDetails($selectedService)

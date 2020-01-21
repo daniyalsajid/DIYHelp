@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('theme.default')
 
 @section('content')
 <div class="card-body">
@@ -24,7 +24,7 @@
                     @foreach($offers as $offer)
                     <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12">
                         <div class="all_items-box-img">
-                            <img src="img/Thank_you.png">
+                            <img src="/img/Thank_you.png">
                         </div>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-9 col-xs-12">
@@ -62,7 +62,7 @@
                 </div>
                 <div class="col-md-3 col-lg-3 col-sm-3 col xs-12">
                     <div class="acknowledge-box-button">
-                        <a href="signUp.html" class="btn btn-primary edit"><span>Edit</span></a>
+                        <a href="signUp.html" class="btn btn-primary edit"><span>Take</span></a>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3 col-sm-3 col xs-12">
@@ -71,3 +71,4 @@
         </div>
     </div>
 </section>
+@endsection
